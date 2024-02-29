@@ -16,5 +16,8 @@ async function updateProduct(id, updateData) {
 async function deleteProduct(id) {
   return axios.delete(`${API_BASE_URL}/delete-inventory/${id}`);
 }
-  
-export { getProducts, createProduct, updateProduct, deleteProduct };
+
+async function getProductInfo(id) {
+  return axios.get(`${API_BASE_URL}/${id}`)
+}
+export { getProducts, createProduct, updateProduct, deleteProduct, getProductInfo };
