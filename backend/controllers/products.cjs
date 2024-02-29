@@ -22,7 +22,7 @@ async function createProduct(req, res) {
 }
 
 async function getProducts(req, res) {
-    const products = await Product.find()
+    const products = await Product.find().populate('supplier')
     return res.json(products)
 }
 
