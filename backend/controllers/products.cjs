@@ -10,15 +10,15 @@ module.exports = {
 }
 
 async function createProduct(req, res) {
-    const {itemName, description, quantity, supplier} = req.body
+    const {itemName, description, stockQuantity, supplier} = req.body
     const newProduct = new Product({
         itemName: itemName,
         description: description,
-        stockQuantity: quantity,
+        stockQuantity: stockQuantity,
         supplier: supplier
     })
     await newProduct.save()
-    return res.status(203)
+    return res.status(200)
 }
 
 async function getProducts(req, res) {
