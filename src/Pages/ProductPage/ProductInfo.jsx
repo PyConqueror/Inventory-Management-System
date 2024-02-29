@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import { useParams } from 'react-router-dom';
 import * as productServices from '../../API Services/productServices';
+import { Link } from 'react-router-dom';
+
 
 function ProductInfoPage() {
   const [product, setProduct] = useState(null);
@@ -25,6 +27,7 @@ function ProductInfoPage() {
       <p><strong>Description:</strong> {product.description}</p>
       <p><strong>Stock Quantity:</strong> {product.stockQuantity}</p>
       <p><strong>Supplier ID:</strong> {product.supplier.name}</p>
+      <Link to={`/edit-product/${product._id}`}>Edit</Link>
     </div>
   );
 }
