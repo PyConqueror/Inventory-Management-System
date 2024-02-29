@@ -9,7 +9,7 @@ require('./backend/config/database.cjs');
 app.use(logger('dev'));
 app.use(express.json());
 
-app.use('api/inventory', require('./backend/routes/products.cjs'));
+app.use('/api/inventory', require('./backend/routes/products.cjs'));
 
 app.use(express.static(path.join(__dirname, 'dist')));
 
