@@ -6,8 +6,8 @@ const productsController = require('../controllers/products.cjs')
 router.get("/inventories", productsController.getProducts) 
 router.get("/:id", productsController.getProductInfo) 
 router.post("/add-inventory", productsController.createProduct) 
-router.get("/update-inventory/:id", productsController.updateProductInfo) 
-router.get("/delete-inventory/:id", productsController.deleteProduct) 
+router.put("/update-inventory/:id", productsController.updateProductInfo) 
+router.delete("/delete-inventory/:id", productsController.deleteProduct) 
 
 
 function print(){
