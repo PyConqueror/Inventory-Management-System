@@ -12,7 +12,6 @@ async function fetchProducts() {
 const response = await productServices.getProducts();
 setProducts(response.data)
 }
-
 if (products === null) {
   return <div>Loading...</div>;
 }
@@ -27,7 +26,7 @@ else return (
           <th>Item Name</th>
           <th>Description</th>
           <th>Stock Quantity</th>
-          <th>Supplier ID</th>
+          <th>Supplier Name</th>
         </tr>
       </thead>
       <tbody>
@@ -36,7 +35,7 @@ else return (
             <td>{product.itemName}</td>
             <td>{product.description}</td>
             <td>{product.stockQuantity}</td>
-            <td>{product.supplier}</td>
+            <td>{product.supplier.name}</td>
           </tr>
         ))}
       </tbody>
