@@ -10,6 +10,7 @@ app.use(logger('dev'));
 app.use(express.json());
 
 app.use('/api/inventory', require('./backend/routes/products.cjs'));
+app.use('/api/supplier', require('./backend/routes/suppliers.cjs'));
 
 app.use(express.static(path.join(__dirname, 'dist')));
 
