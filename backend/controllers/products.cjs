@@ -34,22 +34,8 @@ async function getProductInfo(req, res) {
 async function updateProductInfo(req, res) {
     const productID = req.params.id
     const data = req.body
-
-    if(data.supplier) {
-        const supplierID = data.supplier
-        const updateProductSupplier = Product.findByIdAndUpdate(
-            productID, 
-            {supplier:supplierID})
-        await updateProductSupplier.save()
-    }
-    if(data.description) {
-        const description = data.description
-        const updateProductDescription = Product.findByIdAndUpdate(
-            productID, 
-            {description:description})
-        await updateProductDescription.save()
-    }
-
+    console.log(data)
+    const updatedProduct = await Product.findByIdAndUpdate(productID, data, { new: true });
     return res.status(200)
 }
 
