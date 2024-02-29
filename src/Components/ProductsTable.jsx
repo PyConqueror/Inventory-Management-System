@@ -1,20 +1,23 @@
 import { useState, useEffect } from 'react';
 import * as productServices from '../API Services/productServices';
+import { Link } from 'react-router-dom';
 
 function ProductTable() {
   const [products, setProducts] = useState(null);
 
   useEffect(() => {
-    fetchProducts();
+    fetchProduct();
   }, []);
 
-async function fetchProducts() {
+async function fetchProduct() {
 const response = await productServices.getProducts();
 setProducts(response.data)
 }
+
 if (products === null) {
   return <div>Loading...</div>;
 }
+
 
 else return (
   
@@ -32,7 +35,9 @@ else return (
       <tbody>
         {products.map(product => (
           <tr key={product._id}>
-            <td>{product.itemName}</td>
+            <td>
+              <Link to={`/product-info/${product._id}`} >{product.itemName}</Link>
+            </td>            
             <td>{product.description}</td>
             <td>{product.stockQuantity}</td>
             <td>{product.supplier.name}</td>
