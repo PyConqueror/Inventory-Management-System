@@ -1,8 +1,9 @@
 import axios from 'axios';
 const API_BASE_URL = '/api/inventory'; 
 
-async function getProducts() {
-    return axios.get(`${API_BASE_URL}/inventories`);
+async function getProducts(searchTerm = '') {
+  const params = searchTerm ? { search: searchTerm } : {}; //if no search params then
+  return axios.get(`${API_BASE_URL}/inventories`, { params });
 }
   
 async function createProduct(productData) {
