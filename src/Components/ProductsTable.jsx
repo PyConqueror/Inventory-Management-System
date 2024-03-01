@@ -4,14 +4,24 @@ import { Link } from 'react-router-dom';
 
 function ProductTable() {
   const [products, setProducts] = useState(null);
+  const [searchTerm, setSearchTerm] = useState('');
 
   useEffect(() => {
-    fetchProduct();
+    fetchProducts();
   }, []);
 
-async function fetchProduct() {
-const response = await productServices.getProducts();
+async function fetchProducts() {
+const response = await productServices.getProducts(searchTerm);
 setProducts(response.data)
+}
+
+function handleSearchChange(event) {
+  setSearchTerm(event.target.value);
+}
+
+function handleSearch(event) {
+  event.preventDefault();
+  fetchProducts();
 }
 
 if (products === null) {
@@ -23,6 +33,15 @@ else return (
   
   <div>
     <h2>Product Inventory</h2>
+    <form onSubmit={handleSearch}>
+      <input
+        type="text"
+        placeholder="Search products"
+        value={searchTerm}
+        onChange={handleSearchChange}
+      />
+        <button type="submit">Search</button>
+    </form>
     <table>
       <thead>
         <tr>
@@ -47,9 +66,6 @@ else return (
     </table>
   </div>
 );
-
-
 }
-
 
 export default ProductTable;
