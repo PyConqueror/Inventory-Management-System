@@ -10,7 +10,7 @@ router.put("/update-inventory/:id", productsController.updateProductInfo)
 router.delete("/delete-inventory/:id", productsController.deleteProduct) 
 
 
-function print(){
-    console.log('reached')
-}
+// function print(){
+//     console.log('reached')
+// }
 module.exports = router;  
