@@ -1,8 +1,8 @@
-import axios from 'axios';
+import axiosSendRequest from "./axiosSendRequest";
 const API_BASE_URL = '/api/supplier'; 
 
 async function getSuppliers() {
-    return axios.get(`${API_BASE_URL}/suppliers`);
+    return axiosSendRequest(`${API_BASE_URL}/suppliers`);
 }
 
-export {getSuppliers}
+export { getSuppliers }
