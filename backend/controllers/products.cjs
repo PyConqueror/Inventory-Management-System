@@ -22,8 +22,17 @@ async function createProduct(req, res) {
 }
 
 async function getProducts(req, res) {
-    const products = await Product.find().populate('supplier')
-    return res.json(products)
+    const search = req.query.search;
+    let query = {};
+    if (search) {
+        const regex = new RegExp(search, 'i'); //regex pattern to be case sensitive
+        query = { $or: [
+            { itemName: regex },
+            { description: regex }
+        ]};
+        }
+        const products = await Product.find(query).populate('supplier');
+        res.json(products);
 }
 
 async function getProductInfo(req, res) {
@@ -34,8 +43,7 @@ async function getProductInfo(req, res) {
 async function updateProductInfo(req, res) {
     const productID = req.params.id
     const data = req.body
-    console.log(data)
-    const updatedProduct = await Product.findByIdAndUpdate(productID, data, { new: true });
+    const updatedProduct = await Product.findByIdAndUpdate(productID, data);
     return res.status(200)
 }
 
