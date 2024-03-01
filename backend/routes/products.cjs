@@ -1,13 +1,14 @@
 const express = require('express');
 const router = express.Router();
 const productsController = require('../controllers/products.cjs')
+const ensureLoggedIn = require('../config/ensureLoggedIn.cjs')
 
 
-router.get("/inventories", productsController.getProducts) 
-router.get("/:id", productsController.getProductInfo) 
-router.post("/add-inventory", productsController.createProduct) 
-router.put("/update-inventory/:id", productsController.updateProductInfo) 
-router.delete("/delete-inventory/:id", productsController.deleteProduct) 
+router.get("/inventories", ensureLoggedIn, productsController.getProducts) 
+router.get("/:id", ensureLoggedIn, productsController.getProductInfo) 
+router.post("/add-inventory", ensureLoggedIn, productsController.createProduct) 
+router.put("/update-inventory/:id", ensureLoggedIn,  productsController.updateProductInfo) 
+router.delete("/delete-inventory/:id", ensureLoggedIn, productsController.deleteProduct) 
 
 
 // function print(){
