@@ -1,6 +1,8 @@
 import { useState, useEffect } from 'react';
 import * as productServices from '../API Services/productServices';
 import { Link } from 'react-router-dom';
+import ArrowUpwardIcon from '@mui/icons-material/ArrowUpward';
+import ArrowDownwardIcon from '@mui/icons-material/ArrowDownward';
 
 function ProductTable() {
   const [products, setProducts] = useState(null);
@@ -62,6 +64,13 @@ function sortData(data) {
 
 const sortedProducts = sortData(products);
 
+function getSortDirection(key) {
+  if (sortConfig.key === key) {
+    return sortConfig.direction === 'ascending' ? <ArrowUpwardIcon /> : <ArrowDownwardIcon />;
+  }
+  return null;
+}
+
 
 if (products === null) {
   return <div>Loading...</div>;
@@ -70,30 +79,37 @@ if (products === null) {
 
 else return (
   
-  <div>
+  <div className="product-table-container">
     <h2>Product Inventory</h2>
     <form onSubmit={handleSearch}>
       <input
         type="text"
         placeholder="Search products"
         value={searchTerm}
+        className="search-input"
         onChange={handleSearchChange}
       />
-        <button type="submit">Search</button>
+        <button type="submit" className="search-btn" >Search</button>
     </form>
-    <table>
+    <table className="product-table">
       <thead>
         <tr>
-          <th>
-            <button onClick={() => sortProducts('itemName')}>Item Name</button>
-          </th>
-          <th>Description</th>
-          <th>
-            <button onClick={() => sortProducts('stockQuantity')}>Stock Quantity</button>
-          </th>
-          <th>
-            <button onClick={() => sortProducts('supplierName')}>Supplier Name</button>
-          </th>
+        <th>
+          <p onClick={() => sortProducts('itemName')}>
+            Item Name {getSortDirection('itemName')}
+          </p>
+        </th>
+        <th>Description</th>
+        <th>
+          <p onClick={() => sortProducts('stockQuantity')}>
+            Stock Quantity {getSortDirection('stockQuantity')}
+          </p>
+        </th>
+        <th>
+          <p onClick={() => sortProducts('supplierName')}>
+            Supplier Name {getSortDirection('supplierName')}
+          </p>
+        </th>
         </tr>
       </thead>
       <tbody>
