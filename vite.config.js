@@ -7,7 +7,7 @@ export default defineConfig({
   server: {
     proxy: {
       '/api': {
-        target: 'http://localhost:3001/',
+        target: 'inventory-management-system-pt-820e4eafa3ee.herokuapp.com:3001',
         changeOrigin: true,
       },
     },
