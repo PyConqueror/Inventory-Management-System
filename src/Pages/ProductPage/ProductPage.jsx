@@ -1,8 +1,9 @@
 import React from 'react';
 import { useNavigate } from 'react-router-dom';
 import ProductTable from '../../Components/ProductsTable';
+import { Button } from '@mui/material';
 
-function ProductPage() {
+function ProductPage({user}) {
   const navigate = useNavigate()
 
   function handleClick() {
@@ -10,9 +11,13 @@ function ProductPage() {
   }
 
   return (
-    <div>
+    <div className='product-page'>
       <h1>Products Page</h1>
-      <button onClick={handleClick}>Add New Product</button>
+      {user.accountType === 'admin' && (
+        <button className='add-product-btn' onClick={handleClick}>
+          Add New Product
+        </button>
+      )}
       <ProductTable />
     </div>
   );

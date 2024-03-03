@@ -45,7 +45,7 @@ async function handleDelete() {
 }
 
   return (
-    <div>
+    <div className="product-form-container">
       <h1>Edit Product</h1>
       <form onSubmit={handleSubmit}>
         <div>

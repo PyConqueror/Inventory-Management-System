@@ -26,54 +26,54 @@ function CreateProductPage() {
         setTimeout(() => navigate('/'), 300);
       }
 
-    return (
-        <div>
+      return (
+        <div className="create-product-form">
             <h1>Add New Product</h1>
             <form onSubmit={handleSubmit}>
-            <div>
-              <label>Item Name:</label>
-              <input
-                type="text"
-                value={itemName}
-                onChange={(e) => setItemName(e.target.value)}
-                required
-              />
-            </div>
-            <div>
-              <label>Description:</label>
-              <textarea
-                value={description}
-                onChange={(e) => setDescription(e.target.value)}
-              />
-            </div>
-            <div>
-              <label>Stock Quantity:</label>
-              <input
-                type="number"
-                value={stockQuantity}
-                onChange={(e) => setStockQuantity(e.target.value)}
-                required
-              />
-            </div>
-              <div>
-                  <label>Supplier:</label>
-                  <select
-                      value={supplierId}
-                      onChange={(e) => setSupplierId(e.target.value)}
-                      required>
-
-                      <option value="">Select Supplier</option>
-                      {suppliers.map(supplier => (
-                          <option key={supplier._id} value={supplier._id}>
-                              {supplier.name}
-                          </option>
-                      ))}
-                  </select>
-              </div>
-              <button type="submit">Add Product</button>
-          </form>
-      </div>
-  );
+                <div>
+                    <label>Item Name:</label>
+                    <input
+                        type="text"
+                        value={itemName}
+                        onChange={(e) => setItemName(e.target.value)}
+                        required
+                    />
+                </div>
+                <div>
+                    <label>Description:</label>
+                    <textarea
+                        value={description}
+                        onChange={(e) => setDescription(e.target.value)}
+                    />
+                </div>
+                <div>
+                    <label>Stock Quantity:</label>
+                    <input
+                        type="number"
+                        value={stockQuantity}
+                        onChange={(e) => setStockQuantity(e.target.value)}
+                        required
+                    />
+                </div>
+                <div>
+                    <label>Supplier:</label>
+                    <select
+                        value={supplierId}
+                        onChange={(e) => setSupplierId(e.target.value)}
+                        required
+                    >
+                        <option value="">Select Supplier</option>
+                        {suppliers.map(supplier => (
+                            <option key={supplier._id} value={supplier._id}>
+                                {supplier.name}
+                            </option>
+                        ))}
+                    </select>
+                </div>
+                <button type="submit">Add Product</button>
+            </form>
+        </div>
+    );
 }
 
 export default CreateProductPage;
