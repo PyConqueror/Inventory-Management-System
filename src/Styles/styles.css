@@ -1,0 +1,352 @@
+body, html {
+    margin: 0;
+    padding: 0;
+    font-family: Arial, sans-serif;
+}
+
+/* NAVBAR */
+
+.navbar {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 10px 20px;
+    background: linear-gradient(90deg, #1CB5E0 0%, #000851 100%);
+    color: white;
+}
+
+.nav-section.welcome-section h2,
+.nav-section.welcome-section p {
+     margin: 0;
+    white-space: nowrap; 
+}
+
+
+.links-container {
+    display: flex;
+    margin-left: auto; 
+}
+
+.link {
+    margin-right: 11px;
+    transition: background-color 0.3s ease; 
+  }
+  
+.link:hover {
+    background-color: #115293; 
+    text-decoration: none;
+}
+
+/* PRODUCTS PAGE */
+
+.product-page {
+    padding: 20px;
+}
+
+.product-page h1 {
+    color: #333;
+    text-align: center;
+}
+
+.add-product-btn {
+    display: block;
+    margin: 20px auto;
+    padding: 10px 20px;
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    transition: background-color 0.3s ease;
+  }
+  
+  .add-product-btn:hover {
+    background-color: #115293;
+  }
+
+/* PRODUCTS PAGE */
+
+.product-table {
+    width: 100%;
+    margin-top: 20px;
+    border-collapse: collapse;
+  }
+  
+  .product-table thead {
+    background-color: #dee6f1;
+  }
+  
+  .product-table th,
+  .product-table td {
+    padding: 10px;
+    border: 1px solid white;
+    text-align: center;
+  }
+  
+  .product-table th {
+    cursor: pointer;
+  }
+  
+  .product-table th:hover,
+  .product-table td:hover {
+    background-color: #eef6fd;
+  }
+  
+  .product-table a {
+    color: #1976d2;
+    text-decoration: none;
+  }
+  
+  .product-table a:hover {
+    text-decoration: underline;
+  }
+
+  .search-input {
+    margin-bottom: 10px;
+    padding: 10px;
+    width: 100%;
+    max-width: 300px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+  }
+  
+  .search-btn {
+    padding: 10px 20px;
+    margin-left: 10px;
+    background-color: #1976d2;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+  }
+  
+  .search-btn:hover {
+    background-color: #115293;
+  }
+
+  /* CREATE PRODUCT PAGE*/
+
+.create-product-form {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+  }
+
+.create-product-form h1 {
+    color: #333;
+}
+
+.create-product-form div {
+    margin-bottom: 15px;
+}
+
+.create-product-form label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.create-product-form input[type="text"],
+.create-product-form input[type="number"],
+.create-product-form select,
+.create-product-form textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.create-product-form button {
+    background-color: #5e35b1;
+    color: white;
+    padding: 10px 20px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+    font-size: 16px;
+}
+
+.create-product-form button:hover {
+    background-color: #4527a0;
+}
+
+  /* PRODUCT INFO PAGE*/
+
+.product-info-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+    text-align: center;
+  }
+
+.product-image {
+    max-width: 300px;
+    max-height: 300px;
+}
+
+.product-info-container h1 {
+    color: #333;
+}
+
+.product-info-container p {
+    margin: 10px 0;
+    color: #666;
+}
+
+.product-info-container a {
+    display: inline-block;
+    margin-top: 20px;
+    padding: 10px 15px;
+    background-color: #1976d2;
+    color: white;
+    text-decoration: none;
+    border-radius: 4px;
+}
+
+.product-info-container a:hover {
+    background-color: #115293;
+}
+
+  /* EDIT PRODUCT PAGE*/
+
+.product-form-container {
+    max-width: 600px;
+    margin: 20px auto;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    background-color: #fff;
+}
+
+.product-form-container h1 {
+    color: #333;
+}
+
+.product-form-container div {
+    margin-bottom: 15px;
+}
+
+.product-form-container label {
+    display: block;
+    margin-bottom: 5px;
+    color: #666;
+}
+
+.product-form-container input[type="text"],
+.product-form-container input[type="number"],
+.product-form-container select,
+.product-form-container textarea {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
+}
+
+.product-form-container button {
+    margin-right: 10px;
+    padding: 10px 15px;
+    border: none;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.product-form-container button[type="submit"] {
+    background-color: #5e35b1;
+    color: white;
+}
+
+.product-form-container button[type="button"] {
+    background-color: #d32f2f;
+    color: white;
+}
+
+.product-form-container button:hover {
+    opacity: 0.9;
+}
+
+
+/* AUTH PAGE */
+.auth-form-container {
+    max-width: 400px;
+    margin: 2rem auto;
+    padding: 2rem;
+    background-color: #f7f7f7;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+.auth-form-container form {
+    display: flex;
+    flex-direction: column;
+}
+
+.auth-form-container label {
+    margin-bottom: 0.5rem;
+    color: #333;
+}
+
+.auth-form-container input,
+.auth-form-container select {
+    padding: 10px;
+    margin-bottom: 1rem;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+}
+
+.auth-form-container button {
+    cursor: pointer;
+    padding: 10px;
+    background-color: #007bff;
+    color: white;
+    border: none;
+    border-radius: 4px;
+    transition: background-color 0.3s;
+}
+
+.auth-form-container button:hover {
+    background-color: #0056b3;
+}
+
+.auth-error-message {
+    color: red;
+    text-align: center;
+    margin-top: 1rem;
+}
+
+.auth-container {
+    text-align: center;
+}
+
+.auth-toggle-buttons {
+    margin: 20px 0;
+}
+
+.auth-toggle-button {
+    background-color: #007bff; 
+    border: none;
+    border-radius: 20px;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    margin: 0 10px;
+    padding: 10px 20px;
+    transition: background-color 0.3s ease, transform 0.2s ease;
+}
+
+.auth-toggle-button:hover {
+    background-color: #0056b3;
+    transform: scale(1.05);
+}
+
+.auth-toggle-button:disabled {
+    background-color: #cccccc;
+    cursor: not-allowed;
+}
