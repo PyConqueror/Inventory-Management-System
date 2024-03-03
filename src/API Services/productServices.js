@@ -3,7 +3,6 @@ const API_BASE_URL = '/api/inventory';
 
 async function getProducts(searchTerm = '') {
   const params = searchTerm ? { search: searchTerm } : {};
-  console.log(params)
   return axiosSendRequest(`${API_BASE_URL}/inventories`, 'GET', null,  params );
 }
   

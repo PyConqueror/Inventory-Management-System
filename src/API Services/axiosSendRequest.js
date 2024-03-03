@@ -6,7 +6,6 @@ export default async function axiosSendRequest(url, method, data = null, params 
   const headers = {
     Authorization: `Bearer ${token}`
   };
-  console.log(params)
   const config = {
     method,
     url: `${url}`,
