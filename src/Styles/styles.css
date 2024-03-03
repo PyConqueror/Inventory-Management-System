@@ -64,11 +64,12 @@ body, html {
     background-color: #115293;
   }
 
-/* PRODUCTS PAGE */
+/* PRODUCTS TABLE */
 
 .product-table {
     width: 100%;
     margin-top: 20px;
+    margin-bottom: 40px;
     border-collapse: collapse;
   }
   
@@ -276,12 +277,14 @@ body, html {
 /* AUTH PAGE */
 .auth-form-container {
     max-width: 400px;
-    margin: 2rem auto;
+    margin: 0 auto;
     padding: 2rem;
     background-color: #f7f7f7;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+    border: solid black 2px;
 }
+
 
 .auth-form-container form {
     display: flex;
@@ -323,6 +326,20 @@ body, html {
 
 .auth-container {
     text-align: center;
+    background-image: url('../assets/background.jpeg');
+    background-repeat: no-repeat;
+    background-position: center;
+    background-size: cover;
+    height: 100vh;
+}
+
+.auth-container h1 {
+    margin-top: 0;
+    padding: 30px;
+    border: solid black 2px;
+    background: linear-gradient(90deg, #00C9FF 0%, #92FE9D 100%);;
+    border-radius: 55px;
+    font-size: 2.5rem;
 }
 
 .auth-toggle-buttons {
@@ -331,12 +348,12 @@ body, html {
 
 .auth-toggle-button {
     background-color: #007bff; 
-    border: none;
+    border: solid black 2px;
     border-radius: 20px;
     color: white;
     cursor: pointer;
     font-size: 16px;
-    margin: 0 10px;
+    margin: 10rem 15px 0rem;
     padding: 10px 20px;
     transition: background-color 0.3s ease, transform 0.2s ease;
 }
